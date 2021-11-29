@@ -1,2 +1,3 @@
 DATABASE SCHEMA
-![Screen Shot 2021-11-29 at 1 25 42 PM](https://user-images.githubusercontent.com/89621687/143905231-4427b61c-7626-4ec1-9d9b-64f843be69b6.png)
+![Screen Shot 2021-11-29 at 5 21 47 PM](https://user-images.githubusercontent.com/89621687/143937384-e881bb6d-dc07-488d-9f71-f9543b742a8c.png)
+
