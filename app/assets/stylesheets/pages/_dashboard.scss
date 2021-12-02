@@ -3,19 +3,19 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:400,700&display=swap");
 
 :root {
-  --page-header-bgColor: #242e42;
+  --page-header-bgColor: #7bc9c5;;
   --page-header-bgColor-hover: #1d2636;
   --page-header-txtColor: #dde9f8;
   --page-header-headingColor: #7889a4;
   --page-header-width: 220px;
-  --page-content-bgColor: #f0f1f6;
+  --page-content-bgColor: linear-gradient(180deg, rgba(193,231,255,1) 0%, rgba(193,255,185,1) 100%);
   --page-content-txtColor: #171616;
   --page-content-blockColor:green;
   --white: #fff;
   --black: #333;
   --blue: #00b9eb;
   --red: #ec1848;
-  --border-radius: 8px;
+  --border-radius: 10px;
   --box-shadow: 0 0 10px -2px rgba(0, 0, 0, 0.075);
 }
 
@@ -56,7 +56,6 @@ svg {
 
 body {
   font: 16px/1.5 "Lato", sans-serif;
-  background-image: url("dashboard-bg.png");
 }
 
 
@@ -80,6 +79,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100%;
+  background-color: #7bc9c5;
 }
 
 .page-header .toggle-mob-menu {
@@ -102,9 +102,6 @@ body {
   margin-top: 35px;
 }
 
-.page-header .admin-menu li:nth-last-child(2) {
-  margin-bottom: 35px;
-}
 
 .page-header .admin-menu li:last-child {
   margin-top: auto;
@@ -170,6 +167,7 @@ body {
   padding: 30px;
   color: var(--page-content-txtColor);
   background: var(--page-content-bgColor);
+
 }
 
 .admin-profile {
@@ -178,7 +176,8 @@ body {
   align-items: center;
 }
 .admin-profile .greeting {
-  margin: 0 10px 0 20px;
+  margin: 5px 10px 0 20px;
+  font-size: 1.2em;
 }
 .admin-profile svg {
   width: 60px;
@@ -190,23 +189,47 @@ body {
 
 .page-content .grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 30px;
 }
 
 .page-content .grid > article {
   display: flex;
   height: 300px;
-  background: var(--page-content-blockColor);
   border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
+  background-image: url("challenge-bg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 91%;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 1.3em;
+  font-weight: 800;
+  color: #8b382c;
 }
 
-.page-content .grid > article:first-child,
-.page-content .grid > article:last-child {
+.page-content .grid > article:hover {
+  transform: scale(1.1);
+}
+
+.page-content .grid > article:first-child {
   grid-column: 1 / -1;
-}
 
+  background-image: url("dashboard-home-banner.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  box-shadow: 0px 0px 17px 3px rgba(41, 25, 25, 0.16);
+
+}
+.page-content .grid > article:first-child:hover {
+  transform: none;
+}
 
 /* MQ RULES
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
