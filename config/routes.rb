@@ -3,5 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get "dashboard", to: "pages#dashboard", as: :dashboard
 
-  resources :games, only: %i[create show]
+  resources :challenges, shallow: true do
+    resources :games, only: %i[create show]
+  end
 end
