@@ -1,4 +1,4 @@
-<div id="game-container-1" class="game-container">
+<div id="game-container-1" class="game-container" data-level="<%= @game.challenge.level.to_json %>">
   <div id="map-and-controls">
     <!-- start game map -->
     <div id="game-map-1" class="game-map">
@@ -12,5 +12,3 @@
     Use cursor keys or buttons.
   <p>
 </div>
-  <!-- custom js -->
-<script src="js/script.js"></script>

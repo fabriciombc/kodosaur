@@ -1,37 +1,17 @@
-let levels = [];
+function Game(gameElement) {
+  this.el = gameElement;
 
-levels[0] = {
-  map:[
-    [0,1,0,0,1],
-    [0,0,0,0,0],
-    [0,0,1,1,0],
-    [0,0,0,1,0],
-    [0,1,0,1,0]
-  ],
-  player: {
-    x:0,
-    y:0
-  },
-  goal:{
-    x:4,
-    y:4
-  },
-  theme:'default'
-};
-
-function Game(id, level) {
-
-  this.el = document.getElementById(id);
+  const challengeLevel = JSON.parse(this.el.dataset.level)
 
   this.tileTypes = ['floor','wall'];
 
   this.tileDim = 64;
 
   // inherit the level's properties: map, player start, goal start.
-  this.map = level.map;
-  this.theme = level.theme
-  this.player = {...level.player};
-  this.goal = {...level.goal};
+  this.map = challengeLevel.map;
+  this.theme = challengeLevel.theme
+  this.player = {...challengeLevel.player};
+  this.goal = {...challengeLevel.goal};
 }
 /*
  *  Populates the map with a nested loop.
@@ -287,20 +267,24 @@ Game.prototype.collide = function() {
  * Initialization.
  */
 
-function init() {
-  let myGame = new Game('game-container-1',levels[0]);
+function gameInit() {
+  const gameElement = document.getElementById('game-container-1');
+  if (gameElement) {
 
-  myGame.populateMap();
+    let myGame = new Game(gameElement);
 
-  myGame.sizeUp();
+    myGame.populateMap();
 
-  myGame.placeSprite('goal');
+    myGame.sizeUp();
 
-  let playerSprite = myGame.placeSprite('player');
+    myGame.placeSprite('goal');
 
-  myGame.player.el = playerSprite;
+    let playerSprite = myGame.placeSprite('player');
 
-  myGame.keyboardListener();
+    myGame.player.el = playerSprite;
+
+    myGame.keyboardListener();
+  }
 }
 
-init();
+export {gameInit};
