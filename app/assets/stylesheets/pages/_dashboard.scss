@@ -38,11 +38,6 @@ a {
   text-decoration: none;
 }
 
-button {
-  background: none;
-  cursor: pointer;
-}
-
 input {
   -webkit-appearance: none;
 }
@@ -54,11 +49,6 @@ input {
 
 label {
   cursor: pointer;
-}
-
-button,
-input {
-  border: none;
 }
 
 svg {
@@ -191,7 +181,7 @@ body {
   margin: 0 10px 0 20px;
 }
 .admin-profile svg {
-  width: 70px;
+  width: 60px;
   height: 100%;
 }
 .admin-profile .users {
