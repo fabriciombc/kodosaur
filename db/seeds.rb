@@ -10,7 +10,29 @@ puts "Creating database..."
 User.destroy_all
 
 puts "Creating users..."
-users.create = ([{ nickname: 'sissi_2012', email: 'teste@email.com', password: '123123' },
-  { nickname: 'morgan_2012', email: 'teste@email.com', password: '123123' },
-  { nickname: 'sebi_2014', email: 'teste@email.com', password: '123123' },
-  { nickname: 'manuzinha_2014', email: 'teste', password: '123123' }])
+# users.create = ([{ nickname: 'sissi_2012', email: 'teste@email.com', password: '123123' },
+#   { nickname: 'morgan_2012', email: 'teste@email.com', password: '123123' },
+#   { nickname: 'sebi_2014', email: 'teste@email.com', password: '123123' },
+#   { nickname: 'manuzinha_2014', email: 'teste', password: '123123' }])
+
+puts "Creating challenges..."
+Challenge.create(object: "Reach the goal", level: {
+  map:[
+    [0, 1, 0, 0, 1],
+    [0, 0, 0, 0, 0],
+    [0, 0, 1, 1, 0],
+    [0, 0, 0, 1, 0],
+    [0, 1, 0, 1, 0]
+  ],
+  player: {
+    x:0,
+    y:0
+  },
+  goal:{
+    x:4,
+    y:4
+  },
+  theme:'default'
+}
+)
+puts "seed done"
