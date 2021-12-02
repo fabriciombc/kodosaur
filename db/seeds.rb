@@ -16,7 +16,7 @@ puts "Creating users..."
 #   { nickname: 'manuzinha_2014', email: 'teste', password: '123123' }])
 
 puts "Creating challenges..."
-Challenge.create(object: "Reach the goal", level: {
+Challenge.create(objective: "Reach the goal", level: {
   map:[
     [0, 1, 0, 0, 1],
     [0, 0, 0, 0, 0],

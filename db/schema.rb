@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2021_12_02_194211) do
     t.text "objective", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.jsonb "level"
+    t.jsonb "level", default: "", null: false
   end
 
   create_table "games", force: :cascade do |t|
