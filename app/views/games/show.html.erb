@@ -1,28 +1,23 @@
-<div class="d-flex">
-  <%# Game map  %>
+<div class="game-play d-flex">
   <div id="game-container-1" class="game-container" data-level="<%= @game.challenge.level.to_json %>">
-    <div id="map-and-controls">
-      <!-- start game map -->
-      <div id="game-map-1" class="game-map">
-        <div id="tiles" class="layer"></div>
-        <div id="sprites" class="layer"></div>
-        <div id="success-msg">Goal reached!</div>
-      </div>
+    <!-- start game map -->
+    <div id="game-map-1" class="game-map">
+      <div id="tiles" class="layer"></div>
+      <div id="sprites" class="layer"></div>
+      <div id="success-msg">Goal reached!</div>
     </div>
   </div>
 
-  <%# Working space %>
+  <div id="code-box">
+    <button class="btn btn-primary" id="block-up">up</button>
+    <button class="btn btn-primary" id="block-down">down</button>
+    <button class="btn btn-primary" id="block-left">left</button>
+    <button class="btn btn-primary" id="block-right">right</button>
+  </div>
   <div id="container">
-    <%# canvas(colocar os blocos) %>
-    <div id="canvas"></div>
-    <%# aonde estao os blocos %>
-    <div id="code-box">
-      <div class="up" id="block-up="></div>
-      <div id="block-down="></div>
-      <div id="block-left="></div>
-      <div id="block-right="></div>
-    </div>
-    <%# submit dos blocos %>
-    <div id="code-submit"></div>
+    <ul id="canvas">
+    </ul>
+    <button class="btn btn-danger mt-4" id="code-execute">Execute</button>
+    <button class="btn btn-success mt-4" id="code-reset">Reset</button>
   </div>
 </div>

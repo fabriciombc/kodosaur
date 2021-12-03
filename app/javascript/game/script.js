@@ -5,7 +5,7 @@ function Game(gameElement) {
 
   this.tileTypes = ['floor','wall'];
 
-  this.tileDim = 64;
+  this.tileDim = 128;
 
   // inherit the level's properties: map, player start, goal start.
   this.map = challengeLevel.map;
@@ -102,64 +102,89 @@ Game.prototype.sizeUp = function() {
   *  Moves the player.
   *  @param {Object} event - The event object.
 */
-Game.prototype.movePlayer = function(event) {
-
-  event.preventDefault();
-
-  if (event.keyCode < 37 || event.keyCode > 40) {
-      return;
-  }
-  switch (event.keyCode) {
-
-    case 37:
-    this.moveLeft();
-    break;
-
-    case 38:
-    this.moveUp();
-    break;
-
-    case 39:
-    this.moveRight();
-    break;
-
-    case 40:
-    this.moveDown();
-    break;
-  }
-}
 /*
  *  Checks for the goal.
  */
 Game.prototype.checkGoal = function() {
 
-  let body = document.querySelector('body');
+  let gamePlay = document.querySelector('.game-play');
 
   if (this.player.y == this.goal.y &&
     this.player.x == this.goal.x) {
-    body.className = 'success';
+    gamePlay.className = 'success';
   }
   else {
-    body.className = '';
+    gamePlay.className = '';
   }
 
 }
 /*
  *  Listens for keyboard input.
  */
-Game.prototype.keyboardListener = function() {
 
-  document.addEventListener('keydown', event => {
+Game.prototype.buttomListener = function() {
 
-      this.movePlayer(event);
+  const canvas = document.getElementById('canvas');
 
-      this.checkGoal();
-  });
+  const buttonUp = document.getElementById('block-up')
+  const buttonDown = document.getElementById('block-down')
+  const buttonRight = document.getElementById('block-right')
+  const buttonLeft = document.getElementById('block-left')
+  const buttonExecute = document.getElementById('code-execute')
+  const buttonReset = document.getElementById('code-reset')
+
+  buttonUp.addEventListener('click', event => {
+    canvas.insertAdjacentHTML('beforeend', '<li class="command btn btn-primary" data-command="u">up</li>')
+  })
+  buttonDown.addEventListener('click', event => {
+    canvas.insertAdjacentHTML('beforeend', '<li class="command btn btn-primary" data-command="d">down</li>')
+  })
+  buttonRight.addEventListener('click', event => {
+    canvas.insertAdjacentHTML('beforeend', '<li class="command btn btn-primary" data-command="r">right</li>')
+  })
+  buttonLeft.addEventListener('click', event => {
+    canvas.insertAdjacentHTML('beforeend', '<li class="command btn btn-primary" data-command="l">left</li>')
+  })
+  buttonExecute.addEventListener('click', event => {
+    const commands = document.querySelectorAll('.command')
+    const moviments = []
+    commands.forEach( (command) => { moviments.push(command.dataset.command) })
+    this.player.x = 0;
+    this.player.y = 0;
+    this.executeMoviment(moviments);
+    // this.checkGoal();
+  })
+  buttonReset.addEventListener('click', event => {
+    window.location.reload();
+    return false;
+  })
 }
 
 /*
  * Move player left.
  */
+
+Game.prototype.executeMoviment = function(moviments){
+  moviments.forEach( (moviment) => {
+    switch (moviment) {
+      case 'l':
+      this.moveLeft()
+      break;
+
+      case 'u':
+      this.moveUp();
+      break;
+
+      case 'r':
+      this.moveRight();
+      break;
+
+      case 'd':
+      this.moveDown();
+      break;
+    }
+  })
+};
 
 Game.prototype.moveLeft = function() {
 
@@ -222,6 +247,7 @@ Game.prototype.moveRight = function() {
  */
 Game.prototype.moveDown = function() {
 
+  const timer = null;
   if (this.player.y == this.map.length - 1) {
     this.collide();
     return;
@@ -236,6 +262,7 @@ Game.prototype.moveDown = function() {
   this.player.y +=1;
 
   this.updateVert();
+  clearTimeout(timer);
 }
 
 /*
@@ -267,6 +294,7 @@ Game.prototype.collide = function() {
  * Initialization.
  */
 
+
 function gameInit() {
   const gameElement = document.getElementById('game-container-1');
   if (gameElement) {
@@ -283,7 +311,7 @@ function gameInit() {
 
     myGame.player.el = playerSprite;
 
-    myGame.keyboardListener();
+    myGame.buttomListener();
   }
 }
 
