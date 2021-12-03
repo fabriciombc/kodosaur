@@ -157,9 +157,61 @@ Game.prototype.keyboardListener = function() {
   });
 }
 
+Game.prototype.buttomListener = function() {
+
+  const canvas = document.getElementById('canvas');
+
+  const buttonUp = document.getElementById('block-up')
+  const buttonDown = document.getElementById('block-down')
+  const buttonRight = document.getElementById('block-right')
+  const buttonLeft = document.getElementById('block-left')
+  const buttonExecute = document.getElementById('code-execute')
+
+  buttonUp.addEventListener('click', event => {
+    canvas.insertAdjacentHTML('beforeend', '<li class="command" data-command="u">up</li>')
+  })
+  buttonDown.addEventListener('click', event => {
+    canvas.insertAdjacentHTML('beforeend', '<li class="command" data-command="d">down</li>')
+  })
+  buttonRight.addEventListener('click', event => {
+    canvas.insertAdjacentHTML('beforeend', '<li class="command" data-command="r">right</li>')
+  })
+  buttonLeft.addEventListener('click', event => {
+    canvas.insertAdjacentHTML('beforeend', '<li class="command" data-command="l">left</li>')
+  })
+  buttonExecute.addEventListener('click', event => {
+    const commands = document.querySelectorAll('.command')
+    const moviments = []
+    commands.forEach( (command) => { moviments.push(command.dataset.command) })
+    this.executeMoviment(moviments);
+  })
+}
+
 /*
  * Move player left.
  */
+
+Game.prototype.executeMoviment = function(moviments){
+  moviments.forEach( (moviment) => {
+    switch (moviment) {
+      case 'l':
+      this.moveLeft();
+      break;
+
+      case 'u':
+      this.moveUp();
+      break;
+
+      case 'r':
+      this.moveRight();
+      break;
+
+      case 'd':
+      this.moveDown();
+      break;
+    }
+  })
+};
 
 Game.prototype.moveLeft = function() {
 
@@ -267,6 +319,7 @@ Game.prototype.collide = function() {
  * Initialization.
  */
 
+
 function gameInit() {
   const gameElement = document.getElementById('game-container-1');
   if (gameElement) {
@@ -283,7 +336,9 @@ function gameInit() {
 
     myGame.player.el = playerSprite;
 
-    myGame.keyboardListener();
+    // myGame.executeMoviment(['d', 'r', 'r', 'r', 'r', 'd', 'd', 'd'])
+    // myGame.keyboardListener();
+    myGame.buttomListener();
   }
 }
 
@@ -292,7 +347,7 @@ export {gameInit};
 /*
   1- add eventListener no botao(movimento) do comando
   2- Selecionar canvas
-  3- insertAdjacentHTML(beforeend) da div(botao passo 1) dentro do canvas
+  3- insertAdjacentHTML(beforeend) da div(botao passo 2) dentro do canvas
 
   1- add eventListener no botao(submit)
   2- selecionar o canvas(querySelector)
