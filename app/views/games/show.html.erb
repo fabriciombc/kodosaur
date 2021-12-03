@@ -1,4 +1,5 @@
 <div class="d-flex">
+  <%# Game map  %>
   <div id="game-container-1" class="game-container" data-level="<%= @game.challenge.level.to_json %>">
     <div id="map-and-controls">
       <!-- start game map -->
@@ -10,14 +11,18 @@
     </div>
   </div>
 
+  <%# Working space %>
   <div id="container">
+    <%# canvas(colocar os blocos) %>
     <div id="canvas"></div>
+    <%# aonde estao os blocos %>
     <div id="code-box">
       <div class="up" id="block-up="></div>
       <div id="block-down="></div>
       <div id="block-left="></div>
       <div id="block-right="></div>
     </div>
+    <%# submit dos blocos %>
     <div id="code-submit"></div>
   </div>
 </div>
