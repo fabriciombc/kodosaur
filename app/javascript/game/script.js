@@ -288,3 +288,18 @@ function gameInit() {
 }
 
 export {gameInit};
+
+
+/*
+  1- add eventListener no botao(movimento) do comando
+  2- Selecionar canvas
+  3- insertAdjacentHTML(beforeend) da div(botao passo 1) dentro do canvas
+
+  1- add eventListener no botao(submit)
+  2- selecionar o canvas(querySelector)
+  3- ler o que tem no canvas(querySelectorAll('div'))
+  4- forEach(className )
+  5- case when className == right
+  6- moveRight();
+  7- timeout();
+*/

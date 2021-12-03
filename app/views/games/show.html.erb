@@ -1,14 +1,23 @@
-<div id="game-container-1" class="game-container" data-level="<%= @game.challenge.level.to_json %>">
-  <div id="map-and-controls">
-    <!-- start game map -->
-    <div id="game-map-1" class="game-map">
-      <div id="tiles" class="layer"></div>
-      <div id="sprites" class="layer"></div>
-      <div id="success-msg">Goal reached!</div>
+<div class="d-flex">
+  <div id="game-container-1" class="game-container" data-level="<%= @game.challenge.level.to_json %>">
+    <div id="map-and-controls">
+      <!-- start game map -->
+      <div id="game-map-1" class="game-map">
+        <div id="tiles" class="layer"></div>
+        <div id="sprites" class="layer"></div>
+        <div id="success-msg">Goal reached!</div>
+      </div>
     </div>
   </div>
-  <!-- end game map -->
-  <p id="text-1" class="text">
-    Use cursor keys or buttons.
-  <p>
+
+  <div id="container">
+    <div id="canvas"></div>
+    <div id="code-box">
+      <div class="up" id="block-up="></div>
+      <div id="block-down="></div>
+      <div id="block-left="></div>
+      <div id="block-right="></div>
+    </div>
+    <div id="code-submit"></div>
+  </div>
 </div>

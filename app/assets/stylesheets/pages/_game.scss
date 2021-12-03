@@ -14,11 +14,13 @@
     margin: 0px auto;
   }
 
-  .default .floor {
-    background-color: lightgrey;
-  }
-  .default .wall {
-    background-color: skyblue;
+  &.default {
+    .floor {
+      background-color: lightgrey;
+    }
+    .wall {
+      background-color: skyblue;
+    }
   }
 
   .player {
