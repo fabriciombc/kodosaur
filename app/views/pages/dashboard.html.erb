@@ -28,7 +28,7 @@
     <rect x="3" y="7" width="7" height="1" />
     <rect x="3" y="9" width="5" height="1" />
   </symbol>
-  <symbol id="home" viewBox="0 0 16 16">
+  <symbol id="logout" viewBox="0 0 16 16">
     <rect x="4" width="12" height="12" transform="translate(20 12) rotate(-180)" />
     <polygon points="2 14 2 2 0 2 0 14 0 16 2 16 14 16 14 14 2 14" />
   </symbol>
@@ -80,6 +80,14 @@
           </svg>
           <span>Achievements</span>
         </a>
+      </li>
+      <li>
+        <%= link_to destroy_user_session_path, method: :delete do %>
+          <svg>
+            <use xlink:href="#logout"></use>
+          </svg>
+          <span>Logout</span>
+        <% end %>
       </li>
       <li>
         <a href="#0">
