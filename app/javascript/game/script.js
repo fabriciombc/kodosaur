@@ -5,7 +5,7 @@ function Game(gameElement) {
 
   this.tileTypes = ['floor','wall'];
 
-  this.tileDim = 64;
+  this.tileDim = 128;
 
   // inherit the level's properties: map, player start, goal start.
   this.map = challengeLevel.map;
@@ -102,60 +102,60 @@ Game.prototype.sizeUp = function() {
   *  Moves the player.
   *  @param {Object} event - The event object.
 */
-Game.prototype.movePlayer = function(event) {
+// Game.prototype.movePlayer = function(event) {
 
-  event.preventDefault();
+//   event.preventDefault();
 
-  if (event.keyCode < 37 || event.keyCode > 40) {
-      return;
-  }
-  switch (event.keyCode) {
+//   if (event.keyCode < 37 || event.keyCode > 40) {
+//       return;
+//   }
+//   switch (event.keyCode) {
 
-    case 37:
-    this.moveLeft();
-    break;
+//     case 37:
+//     this.moveLeft();
+//     break;
 
-    case 38:
-    this.moveUp();
-    break;
+//     case 38:
+//     this.moveUp();
+//     break;
 
-    case 39:
-    this.moveRight();
-    break;
+//     case 39:
+//     this.moveRight();
+//     break;
 
-    case 40:
-    this.moveDown();
-    break;
-  }
-}
+//     case 40:
+//     this.moveDown();
+//     break;
+//   }
+// }
 /*
  *  Checks for the goal.
  */
 Game.prototype.checkGoal = function() {
 
-  let body = document.querySelector('body');
+  let gamePlay = document.querySelector('.game-play');
 
   if (this.player.y == this.goal.y &&
     this.player.x == this.goal.x) {
-    body.className = 'success';
+    gamePlay.className = 'success';
   }
   else {
-    body.className = '';
+    gamePlay.className = '';
   }
 
 }
 /*
  *  Listens for keyboard input.
  */
-Game.prototype.keyboardListener = function() {
+// Game.prototype.keyboardListener = function() {
 
-  document.addEventListener('keydown', event => {
+//   document.addEventListener('keydown', event => {
 
-      this.movePlayer(event);
+//       this.movePlayer(event);
 
-      this.checkGoal();
-  });
-}
+//       this.checkGoal();
+//   });
+// }
 
 Game.prototype.buttomListener = function() {
 
@@ -166,24 +166,30 @@ Game.prototype.buttomListener = function() {
   const buttonRight = document.getElementById('block-right')
   const buttonLeft = document.getElementById('block-left')
   const buttonExecute = document.getElementById('code-execute')
+  const buttonReset = document.getElementById('code-reset')
 
   buttonUp.addEventListener('click', event => {
-    canvas.insertAdjacentHTML('beforeend', '<li class="command" data-command="u">up</li>')
+    canvas.insertAdjacentHTML('beforeend', '<li class="command btn btn-primary" data-command="u">up</li>')
   })
   buttonDown.addEventListener('click', event => {
-    canvas.insertAdjacentHTML('beforeend', '<li class="command" data-command="d">down</li>')
+    canvas.insertAdjacentHTML('beforeend', '<li class="command btn btn-primary" data-command="d">down</li>')
   })
   buttonRight.addEventListener('click', event => {
-    canvas.insertAdjacentHTML('beforeend', '<li class="command" data-command="r">right</li>')
+    canvas.insertAdjacentHTML('beforeend', '<li class="command btn btn-primary" data-command="r">right</li>')
   })
   buttonLeft.addEventListener('click', event => {
-    canvas.insertAdjacentHTML('beforeend', '<li class="command" data-command="l">left</li>')
+    canvas.insertAdjacentHTML('beforeend', '<li class="command btn btn-primary" data-command="l">left</li>')
   })
   buttonExecute.addEventListener('click', event => {
     const commands = document.querySelectorAll('.command')
     const moviments = []
     commands.forEach( (command) => { moviments.push(command.dataset.command) })
     this.executeMoviment(moviments);
+    // this.checkGoal();
+  })
+  buttonReset.addEventListener('click', event => {
+    window.location.reload();
+    return false;
   })
 }
 
@@ -191,23 +197,38 @@ Game.prototype.buttomListener = function() {
  * Move player left.
  */
 
+// Game.prototype.pauseComp = function(millis){
+//   var date = new Date();
+//   var curDate = null;
+//   do { curDate = new Date(); }
+//   while(curDate-date < millis);
+// }
+
+// Game.prototype.sleep = function(ms){
+//   return new Promise(resolve => setTimeout(resolve, ms));
+// }
+
 Game.prototype.executeMoviment = function(moviments){
   moviments.forEach( (moviment) => {
     switch (moviment) {
       case 'l':
-      this.moveLeft();
+      setTimeout(this.moveLeft(), 1000)
+      // this.moveLeft();
       break;
 
       case 'u':
-      this.moveUp();
+      setTimeout(this.moveUp(), 1000)
+      // this.moveUp();
       break;
 
       case 'r':
-      this.moveRight();
+      setTimeout(this.moveRight(), 1000)
+      // this.moveRight();
       break;
 
       case 'd':
-      this.moveDown();
+      setTimeout(this.moveDown(), 1000)
+      // this.moveDown();
       break;
     }
   })

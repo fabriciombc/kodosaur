@@ -1,24 +1,23 @@
-<div class="d-flex">
+<div class="game-play d-flex">
   <div id="game-container-1" class="game-container" data-level="<%= @game.challenge.level.to_json %>">
-    <div id="map-and-controls">
-      <!-- start game map -->
-      <div id="game-map-1" class="game-map">
-        <div id="tiles" class="layer"></div>
-        <div id="sprites" class="layer"></div>
-        <div id="success-msg">Goal reached!</div>
-      </div>
+    <!-- start game map -->
+    <div id="game-map-1" class="game-map">
+      <div id="tiles" class="layer"></div>
+      <div id="sprites" class="layer"></div>
+      <div id="success-msg">Goal reached!</div>
     </div>
   </div>
 
+  <div id="code-box">
+    <button class="btn btn-primary" id="block-up">up</button>
+    <button class="btn btn-primary" id="block-down">down</button>
+    <button class="btn btn-primary" id="block-left">left</button>
+    <button class="btn btn-primary" id="block-right">right</button>
+  </div>
   <div id="container">
     <ul id="canvas">
     </ul>
-    <div id="code-box">
-      <button id="block-up">up</button>
-      <button id="block-down">down</button>
-      <button id="block-left">left</button>
-      <button id="block-right">right</button>
-    </div>
-    <button id="code-execute">Execute</button>
+    <button class="btn btn-danger mt-4" id="code-execute">Execute</button>
+    <button class="btn btn-success mt-4" id="code-reset">Reset</button>
   </div>
 </div>
