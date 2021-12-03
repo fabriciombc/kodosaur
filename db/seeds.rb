@@ -10,10 +10,12 @@ puts "Creating database..."
 User.destroy_all
 
 puts "Creating users..."
-# users.create = ([{ nickname: 'sissi_2012', email: 'teste@email.com', password: '123123' },
-#   { nickname: 'morgan_2012', email: 'teste@email.com', password: '123123' },
-#   { nickname: 'sebi_2014', email: 'teste@email.com', password: '123123' },
-#   { nickname: 'manuzinha_2014', email: 'teste', password: '123123' }])
+
+User.create!(nickname: 'morgan_2012', email: 'morgan@test.com', password: '123123')
+User.create!(nickname: 'sebi_2014', email: 'sebi@test.com', password: '123123')
+User.create!(nickname: 'manuzinha_2014', email: 'manu@test.com', password: '123123')
+User.create!(nickname: 'duda_2014', email: 'duda@test.com', password: '123123')
+
 
 puts "Creating challenges..."
 Challenge.create(objective: "Reach the goal", level: {
