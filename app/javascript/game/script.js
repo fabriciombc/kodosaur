@@ -102,32 +102,6 @@ Game.prototype.sizeUp = function() {
   *  Moves the player.
   *  @param {Object} event - The event object.
 */
-// Game.prototype.movePlayer = function(event) {
-
-//   event.preventDefault();
-
-//   if (event.keyCode < 37 || event.keyCode > 40) {
-//       return;
-//   }
-//   switch (event.keyCode) {
-
-//     case 37:
-//     this.moveLeft();
-//     break;
-
-//     case 38:
-//     this.moveUp();
-//     break;
-
-//     case 39:
-//     this.moveRight();
-//     break;
-
-//     case 40:
-//     this.moveDown();
-//     break;
-//   }
-// }
 /*
  *  Checks for the goal.
  */
@@ -147,15 +121,6 @@ Game.prototype.checkGoal = function() {
 /*
  *  Listens for keyboard input.
  */
-// Game.prototype.keyboardListener = function() {
-
-//   document.addEventListener('keydown', event => {
-
-//       this.movePlayer(event);
-
-//       this.checkGoal();
-//   });
-// }
 
 Game.prototype.buttomListener = function() {
 
@@ -184,6 +149,8 @@ Game.prototype.buttomListener = function() {
     const commands = document.querySelectorAll('.command')
     const moviments = []
     commands.forEach( (command) => { moviments.push(command.dataset.command) })
+    this.player.x = 0;
+    this.player.y = 0;
     this.executeMoviment(moviments);
     // this.checkGoal();
   })
@@ -197,38 +164,23 @@ Game.prototype.buttomListener = function() {
  * Move player left.
  */
 
-// Game.prototype.pauseComp = function(millis){
-//   var date = new Date();
-//   var curDate = null;
-//   do { curDate = new Date(); }
-//   while(curDate-date < millis);
-// }
-
-// Game.prototype.sleep = function(ms){
-//   return new Promise(resolve => setTimeout(resolve, ms));
-// }
-
 Game.prototype.executeMoviment = function(moviments){
   moviments.forEach( (moviment) => {
     switch (moviment) {
       case 'l':
-      setTimeout(this.moveLeft(), 1000)
-      // this.moveLeft();
+      this.moveLeft()
       break;
 
       case 'u':
-      setTimeout(this.moveUp(), 1000)
-      // this.moveUp();
+      this.moveUp();
       break;
 
       case 'r':
-      setTimeout(this.moveRight(), 1000)
-      // this.moveRight();
+      this.moveRight();
       break;
 
       case 'd':
-      setTimeout(this.moveDown(), 1000)
-      // this.moveDown();
+      this.moveDown();
       break;
     }
   })
@@ -295,6 +247,7 @@ Game.prototype.moveRight = function() {
  */
 Game.prototype.moveDown = function() {
 
+  const timer = null;
   if (this.player.y == this.map.length - 1) {
     this.collide();
     return;
@@ -309,6 +262,7 @@ Game.prototype.moveDown = function() {
   this.player.y +=1;
 
   this.updateVert();
+  clearTimeout(timer);
 }
 
 /*
@@ -357,24 +311,8 @@ function gameInit() {
 
     myGame.player.el = playerSprite;
 
-    // myGame.executeMoviment(['d', 'r', 'r', 'r', 'r', 'd', 'd', 'd'])
-    // myGame.keyboardListener();
     myGame.buttomListener();
   }
 }
 
 export {gameInit};
-
-/*
-  1- add eventListener no botao(movimento) do comando
-  2- Selecionar canvas
-  3- insertAdjacentHTML(beforeend) da div(botao passo 2) dentro do canvas
-
-  1- add eventListener no botao(submit)
-  2- selecionar o canvas(querySelector)
-  3- ler o que tem no canvas(querySelectorAll('div'))
-  4- forEach(className )
-  5- case when className == right
-  6- moveRight();
-  7- timeout();
-*/
