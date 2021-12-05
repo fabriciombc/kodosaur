@@ -165,25 +165,49 @@ Game.prototype.buttomListener = function() {
  */
 
 Game.prototype.executeMoviment = function(moviments){
-  moviments.forEach( (moviment) => {
-    switch (moviment) {
-      case 'l':
-      this.moveLeft()
-      break;
+  for (let index = 0; index < moviments.length; index++) {
+    const moviment = moviments[index];
+    setTimeout(() => {
+      switch (moviment) {
+        case 'l':
+          this.moveLeft()
+          break;
 
-      case 'u':
-      this.moveUp();
-      break;
+        case 'u':
+          this.moveUp();
+          break;
 
-      case 'r':
-      this.moveRight();
-      break;
+        case 'r':
+          this.moveRight();
+          break;
 
-      case 'd':
-      this.moveDown();
-      break;
-    }
-  })
+        case 'd':
+          this.moveDown();
+          break;
+      }
+    }, 700 * (index))
+
+  }
+
+  // moviments.forEach( (moviment) => {
+  //   switch (moviment) {
+  //     case 'l':
+  //     this.moveLeft()
+  //     break;
+
+  //     case 'u':
+  //     this.moveUp();
+  //     break;
+
+  //     case 'r':
+  //     this.moveRight();
+  //     break;
+
+  //     case 'd':
+  //     this.moveDown();
+  //     break;
+  //   }
+  // })
 };
 
 Game.prototype.moveLeft = function() {
