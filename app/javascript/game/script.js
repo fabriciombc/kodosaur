@@ -184,8 +184,8 @@ Game.prototype.buttomListener = function() {
     canvas.insertAdjacentHTML('beforeend', '<li class="command btn btn-primary" data-command="l">left</li>')
   })
   buttonExecute.addEventListener('click', event => {
-    this.player.x = 0;
-    this.player.y = 0;
+    // this.player.x = 0;
+    // this.player.y = 0;
     const commands = document.querySelectorAll('.command')
     const moviments = []
     commands.forEach( (command) => { moviments.push(command.dataset.command) })
@@ -225,7 +225,7 @@ Game.prototype.executeMoviment = function(moviments){
       if (index == moviments.length - 1){
         this.checkGoal();
       }
-    }, 700 * (index))
+    }, 500 * (index))
   }
 };
 

@@ -1,22 +1,27 @@
-<div class="game-play d-flex">
-  <div class="container" id="code-box">
-    <button class="btn btn-primary" id="block-up">up</button>
-    <button class="btn btn-primary" id="block-down">down</button>
-    <button class="btn btn-primary" id="block-left">left</button>
-    <button class="btn btn-primary" id="block-right">right</button>
-  </div>
+<div class="container">
+  <div class="game-play row">
+    <div class="col-3">
+      <div id="code-box">
+        <button class="btn btn-primary" id="block-up">up</button>
+        <button class="btn btn-primary" id="block-down">down</button>
+        <button class="btn btn-primary" id="block-left">left</button>
+        <button class="btn btn-primary" id="block-right">right</button>
+      </div>
+    </div>
 
-  <div class="container">
-    <ul id="canvas">
-    </ul>
-    <button class="btn btn-danger mt-4" id="code-execute">Execute</button>
-    <button class="btn btn-success mt-4" id="code-reset">Reset</button>
-  </div>
+    <div class="col-3">
+      <ul id="canvas">
+      </ul>
+      <button class="btn btn-danger mt-4" id="code-execute">Execute</button>
+      <button class="btn btn-success mt-4" id="code-reset">Reset</button>
+    </div>
 
-  <div id="game-container-1" class="game-container" data-challenge-id="<%= @game.challenge.id %>" data-level="<%= @game.challenge.level.to_json %>">
-    <div id="game-map-1" class="game-map">
-      <div id="tiles" class="layer"></div>
-      <div id="sprites" class="layer"></div>
+    <div class="col-6">
+      <div id="game-container-1" class="game-container" data-challenge-id="<%= @game.challenge.id %>" data-level="<%= @game.challenge.level.to_json %>">
+        <div id="game-map-1" class="game-map">
+          <div id="tiles" class="layer"></div>
+          <div id="sprites" class="layer"></div>
+        </div>
     </div>
   </div>
 </div>
