@@ -106,17 +106,10 @@ Game.prototype.sizeUp = function() {
  *  Checks for the goal.
  */
 Game.prototype.checkGoal = function() {
-
-  let gamePlay = document.querySelector('.game-play');
-
   if (this.player.y == this.goal.y &&
     this.player.x == this.goal.x) {
-    gamePlay.className = 'success';
+    alert('You clicked the button!');
   }
-  else {
-    gamePlay.className = '';
-  }
-
 }
 /*
  *  Listens for keyboard input.
@@ -146,13 +139,12 @@ Game.prototype.buttomListener = function() {
     canvas.insertAdjacentHTML('beforeend', '<li class="command btn btn-primary" data-command="l">left</li>')
   })
   buttonExecute.addEventListener('click', event => {
+    this.player.x = 0;
+    this.player.y = 0;
     const commands = document.querySelectorAll('.command')
     const moviments = []
     commands.forEach( (command) => { moviments.push(command.dataset.command) })
-    this.player.x = 0;
-    this.player.y = 0;
     this.executeMoviment(moviments);
-    // this.checkGoal();
   })
   buttonReset.addEventListener('click', event => {
     window.location.reload();
@@ -185,29 +177,10 @@ Game.prototype.executeMoviment = function(moviments){
           this.moveDown();
           break;
       }
+      this.checkGoal();
     }, 700 * (index))
 
   }
-
-  // moviments.forEach( (moviment) => {
-  //   switch (moviment) {
-  //     case 'l':
-  //     this.moveLeft()
-  //     break;
-
-  //     case 'u':
-  //     this.moveUp();
-  //     break;
-
-  //     case 'r':
-  //     this.moveRight();
-  //     break;
-
-  //     case 'd':
-  //     this.moveDown();
-  //     break;
-  //   }
-  // })
 };
 
 Game.prototype.moveLeft = function() {
@@ -304,7 +277,6 @@ Game.prototype.updateVert = function() {
 Game.prototype.collide = function() {
   this.player.el.className += ' collide';
 
-  let delay = 200;
   let obj = this;
 
   window.setTimeout(function() {

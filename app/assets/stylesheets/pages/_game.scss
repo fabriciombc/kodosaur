@@ -33,11 +33,9 @@
   }
 
   .player {
-    // background-color: lightgreen;
     background-image: asset-url("kodo-espelhado.png");
     background-repeat: no-repeat;
     background-size: 128px 128px;
-    //border: 1px solid green;
     transition: left 0.2s linear, top 0.2s linear;
 	  animation: pulse 1.2s linear infinite;
   }
@@ -60,7 +58,7 @@
   }
 
   #tiles div {
-    // border: 1px solid grey;
+    border: 1px solid white;
   }
 
   #success-msg {
