@@ -1,0 +1,43 @@
+.container-login{
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+
+  background-image: url("bg2.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: auto;
+}
+
+
+#signup-login {
+  width: 400px;
+  height: 100vh;
+  border: solid rgba(255, 255, 255, 0.3) 10px;
+
+  padding: 10px 15px 15px;
+
+  background: rgba(255, 255, 255, 0.9);
+  -webkit-box-shadow: 0px 0px 15px 10px rgba(0,0,0,0.5);
+  box-shadow: 0px 0px 15px 10px rgba(0,0,0,0.5);
+
+
+  text-align: center;
+}
+
+#signup-login label {
+  font-family: 'Fuzzy Bubbles', cursive;
+  font-weight: bold;
+}
+
+#signup-login h2 {
+  font-family: 'Fuzzy Bubbles', cursive;
+  font-weight: bold;
+}
+
+.btn-login {
+  width: 100%;
+  margin-bottom: 20px;
+}
