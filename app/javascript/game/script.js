@@ -1,3 +1,6 @@
+import Swal from 'sweetalert2'
+import { FetchRequest } from "@rails/request.js";
+
 function Game(gameElement) {
   this.el = gameElement;
 
@@ -106,17 +109,52 @@ Game.prototype.sizeUp = function() {
  *  Checks for the goal.
  */
 Game.prototype.checkGoal = function() {
-
-  let gamePlay = document.querySelector('.game-play');
-
   if (this.player.y == this.goal.y &&
-    this.player.x == this.goal.x) {
-    gamePlay.className = 'success';
+  this.player.x == this.goal.x) {
+    Swal.fire({
+      icon: 'success',
+      title: 'Good Job!',
+      text: 'Go to next level or play again',
+      showDenyButton: true,
+      confirmButtonText: 'Next Level',
+      denyButtonText: 'Play again'})
+      .then((result) => {
+        if (result.isConfirmed) {
+          const challengeId = parseInt(document.getElementById('game-container-1').dataset.challengeId);
+          const csrfToken = document.querySelector('meta[name="csrf-token"]').content
+          fetch(`/challenges/${challengeId + 1}/games`, {
+            method: 'POST',
+            headers: {
+              "Content-Type": "application/json",
+              "Accept": "application/json",
+              'X-CSRF-Token': csrfToken
+            }
+          })
+          .then(response => response.json())
+          .then(data => {
+            window.location.href = `/games/${data.id}`
+          })
+        } else if (result.isDenied) {
+        document.getElementById('code-reset').click();
+        }
+      })
   }
   else {
-    gamePlay.className = '';
+    Swal.fire({
+      icon: 'error',
+      title: 'You did not finish it',
+      text: 'Try again!',
+      showDenyButton: true,
+      confirmButtonText: 'Try again',
+      denyButtonText: 'Dashboard'})
+      .then((result) => {
+        if (result.isConfirmed) {
+          document.getElementById('code-reset').click();
+        } else if (result.isDenied) {
+          window.location.href = '/dashboard'
+        }
+        })
   }
-
 }
 /*
  *  Listens for keyboard input.
@@ -146,13 +184,12 @@ Game.prototype.buttomListener = function() {
     canvas.insertAdjacentHTML('beforeend', '<li class="command btn btn-primary" data-command="l">left</li>')
   })
   buttonExecute.addEventListener('click', event => {
+    this.player.x = 0;
+    this.player.y = 0;
     const commands = document.querySelectorAll('.command')
     const moviments = []
     commands.forEach( (command) => { moviments.push(command.dataset.command) })
-    this.player.x = 0;
-    this.player.y = 0;
     this.executeMoviment(moviments);
-    // this.checkGoal();
   })
   buttonReset.addEventListener('click', event => {
     window.location.reload();
@@ -185,29 +222,11 @@ Game.prototype.executeMoviment = function(moviments){
           this.moveDown();
           break;
       }
+      if (index == moviments.length - 1){
+        this.checkGoal();
+      }
     }, 700 * (index))
-
   }
-
-  // moviments.forEach( (moviment) => {
-  //   switch (moviment) {
-  //     case 'l':
-  //     this.moveLeft()
-  //     break;
-
-  //     case 'u':
-  //     this.moveUp();
-  //     break;
-
-  //     case 'r':
-  //     this.moveRight();
-  //     break;
-
-  //     case 'd':
-  //     this.moveDown();
-  //     break;
-  //   }
-  // })
 };
 
 Game.prototype.moveLeft = function() {
@@ -304,7 +323,6 @@ Game.prototype.updateVert = function() {
 Game.prototype.collide = function() {
   this.player.el.className += ' collide';
 
-  let delay = 200;
   let obj = this;
 
   window.setTimeout(function() {

@@ -104,14 +104,8 @@
 <section class="page-content">
   <section class="grid">
     <article></article>
-    <article><%= link_to 'LEVEL 1', challenge_games_path(Challenge.first), method: :post %></article>
-    <article>LEVEL 2</article>
-    <article>LEVEL 3</article>
-    <article>LEVEL 4</article>
-    <article>LEVEL 5</article>
-    <article>LEVEL 6</article>
-    <article>LEVEL 7</article>
-    <article>LEVEL 8</article>
-    <article>LEVEL 9</article>
+    <% @challenges.each_with_index do |challenge, index| %>
+      <article><%= link_to "LEVEL #{index + 1}", challenge_games_path(challenge), method: :post %></article>
+    <% end %>
   </section>
 </section>
