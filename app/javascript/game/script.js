@@ -115,6 +115,13 @@ Game.prototype.checkGoal = function() {
       'You passed the level!',
       'success');
   }
+  else {
+    Swal.fire({
+      icon: 'error',
+      title: 'You did not finish it',
+      text: 'Try again!',
+    })
+  }
 }
 /*
  *  Listens for keyboard input.
