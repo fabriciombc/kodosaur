@@ -9,6 +9,10 @@ class GamesController < ApplicationController
 
     @game = Game.new(challenge: @challenge, user: @user, completed: false)
     @game.save
-    redirect_to @game
+
+    respond_to do |format|
+      format.html { redirect_to @game }
+      format.json { render json: @game }
+    end
   end
 end

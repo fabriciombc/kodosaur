@@ -1,4 +1,5 @@
 import Swal from 'sweetalert2'
+import { FetchRequest } from "@rails/request.js";
 
 function Game(gameElement) {
   this.el = gameElement;
@@ -109,18 +110,50 @@ Game.prototype.sizeUp = function() {
  */
 Game.prototype.checkGoal = function() {
   if (this.player.y == this.goal.y &&
-    this.player.x == this.goal.x) {
-    Swal.fire(
-      'Good job!',
-      'You passed the level!',
-      'success');
+  this.player.x == this.goal.x) {
+    Swal.fire({
+      icon: 'success',
+      title: 'Good Job!',
+      text: 'Go to next level or play again',
+      showDenyButton: true,
+      confirmButtonText: 'Next Level',
+      denyButtonText: 'Play again'})
+      .then((result) => {
+        if (result.isConfirmed) {
+          const challengeId = parseInt(document.getElementById('game-container-1').dataset.challengeId);
+          const csrfToken = document.querySelector('meta[name="csrf-token"]').content
+          fetch(`/challenges/${challengeId + 1}/games`, {
+            method: 'POST',
+            headers: {
+              "Content-Type": "application/json",
+              "Accept": "application/json",
+              'X-CSRF-Token': csrfToken
+            }
+          })
+          .then(response => response.json())
+          .then(data => {
+            window.location.href = `/games/${data.id}`
+          })
+        } else if (result.isDenied) {
+        document.getElementById('code-reset').click();
+        }
+      })
   }
   else {
     Swal.fire({
       icon: 'error',
       title: 'You did not finish it',
       text: 'Try again!',
-    })
+      showDenyButton: true,
+      confirmButtonText: 'Try again',
+      denyButtonText: 'Dashboard'})
+      .then((result) => {
+        if (result.isConfirmed) {
+          document.getElementById('code-reset').click();
+        } else if (result.isDenied) {
+          window.location.href = '/dashboard'
+        }
+        })
   }
 }
 /*
@@ -189,9 +222,10 @@ Game.prototype.executeMoviment = function(moviments){
           this.moveDown();
           break;
       }
-      this.checkGoal();
+      if (index == moviments.length - 1){
+        this.checkGoal();
+      }
     }, 700 * (index))
-
   }
 };
 

@@ -37,4 +37,24 @@ Challenge.create(objective: "Reach the goal", level: {
   theme:'default'
 }
 )
+
+Challenge.create(objective: "Reach the goal", level: {
+  map:[
+    [0, 1, 0, 0, 0],
+    [0, 1, 0, 1, 0],
+    [0, 1, 0, 1, 0],
+    [0, 1, 0, 1, 0],
+    [0, 0, 0, 1, 0]
+  ],
+  player: {
+    x:0,
+    y:0
+  },
+  goal:{
+    x:4,
+    y:4
+  },
+  theme:'default'
+}
+)
 puts "seed done"
