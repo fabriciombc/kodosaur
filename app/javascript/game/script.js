@@ -1,3 +1,5 @@
+import Swal from 'sweetalert2'
+
 function Game(gameElement) {
   this.el = gameElement;
 
@@ -108,7 +110,10 @@ Game.prototype.sizeUp = function() {
 Game.prototype.checkGoal = function() {
   if (this.player.y == this.goal.y &&
     this.player.x == this.goal.x) {
-    alert('You clicked the button!');
+    Swal.fire(
+      'Good job!',
+      'You passed the level!',
+      'success');
   }
 }
 /*
