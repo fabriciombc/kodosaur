@@ -15,4 +15,15 @@ class GamesController < ApplicationController
       format.json { render json: @game }
     end
   end
+
+  def update
+    @game = Game.find(params[:id])
+    @game.completed = true
+    @game.save
+
+    respond_to do |format|
+      format.html { redirect_to @game }
+      format.json { render json: @game }
+    end
+  end
 end
