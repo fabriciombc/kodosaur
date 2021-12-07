@@ -10,4 +10,7 @@ class PagesController < ApplicationController
 
   def achievement
   end
+
+  def friends
+  end
 end

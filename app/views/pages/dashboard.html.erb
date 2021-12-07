@@ -66,11 +66,12 @@
     </div>
     <ul class="admin-menu">
       <li>
-        <a href="#0">
+        <%= link_to friends_path  do%>
           <svg>
             <use xlink:href="#users"></use>
           </svg>
           <span>Friends</span>
+        <% end %>
         </a>
       </li>
       <li>
