@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :games, dependent: :destroy
   has_many :challenges, through: :games
+  has_one_attached :photo
 
   def completed_challenges
     challenges.joins(:games).where(games: {completed: true}).ids
