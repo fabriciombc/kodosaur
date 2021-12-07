@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :challenges, shallow: true do
     resources :games, only: %i[create show]
   end
+  resources :games, only: [:update]
 end

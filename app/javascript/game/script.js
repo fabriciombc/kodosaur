@@ -111,6 +111,16 @@ Game.prototype.sizeUp = function() {
 Game.prototype.checkGoal = function() {
   if (this.player.y == this.goal.y &&
   this.player.x == this.goal.x) {
+    const gameId = parseInt(document.getElementById('game-container-1').dataset.gameId);
+    const csrfToken = document.querySelector('meta[name="csrf-token"]').content
+    fetch(`/games/${gameId} `, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+        'X-CSRF-Token': csrfToken
+      }
+    })
     Swal.fire({
       icon: 'success',
       title: 'Good Job!',
@@ -120,8 +130,8 @@ Game.prototype.checkGoal = function() {
       denyButtonText: 'Play again'})
       .then((result) => {
         if (result.isConfirmed) {
+
           const challengeId = parseInt(document.getElementById('game-container-1').dataset.challengeId);
-          const csrfToken = document.querySelector('meta[name="csrf-token"]').content
           fetch(`/challenges/${challengeId + 1}/games`, {
             method: 'POST',
             headers: {
