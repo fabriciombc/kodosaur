@@ -12,6 +12,6 @@ class User < ApplicationRecord
   end
 
   def last_completed_challenge
-    completed_challenges.max
+    completed_challenges.max || 0
   end
 end
