@@ -187,6 +187,7 @@ body {
   width: 130px;
   height: 130px;
   overflow: auto;
+  object-fit: cover;
   box-shadow: 0px 0px 17px 3px rgba(83, 4, 77, 0.3);
 }
 .admin-profile .greeting {
@@ -216,7 +217,7 @@ body {
   background-image: url("challenge-bg.png");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 88%;
+  background-size: 84%;
 
   display: flex;
   flex-direction: column;
