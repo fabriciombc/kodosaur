@@ -7,8 +7,7 @@ class GamesController < ApplicationController
     @challenge = Challenge.find(params[:challenge_id])
     @user = current_user
 
-    @game = Game.new(challenge: @challenge, user: @user, completed: false)
-    @game.save
+    @game = Game.find_or_create_by(challenge: @challenge, user: @user)
 
     respond_to do |format|
       format.html { redirect_to @game }
