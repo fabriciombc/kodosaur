@@ -7,4 +7,7 @@ class PagesController < ApplicationController
   def dashboard
     @challenges = Challenge.all
   end
+
+  def achievement
+  end
 end
