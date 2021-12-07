@@ -193,4 +193,23 @@ Challenge.create(objective: "Help Kodo go back home", level: {
   theme:'default'
 }
 )
+
+Challenge.create(objective: "Help Kodo go back home", level: {
+  map:[
+    [0, 0, 0],
+    [1, 0, 1],
+    [0, 0, 0]
+
+  ],
+  player: {
+    x:2,
+    y:0
+  },
+  goal:{
+    x:2,
+    y:2
+  },
+  theme:'default'
+}
+)
 puts "seed done"

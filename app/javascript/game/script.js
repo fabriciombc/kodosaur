@@ -8,7 +8,7 @@ function Game(gameElement) {
 
   this.tileTypes = ['floor','wall'];
 
-  this.tileDim = 128;
+  this.tileDim = 130;
 
   // inherit the level's properties: map, player start, goal start.
   this.map = challengeLevel.map;
