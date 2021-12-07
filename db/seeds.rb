@@ -22,19 +22,18 @@ puts "Creating challenges..."
 # Obj: Ajude Kodo a sair de casa
 Challenge.create(objective: "Help Kodo leave the house", level: {
   map:[
-    [0, 1, 0, 0, 1],
-    [0, 0, 0, 0, 0],
-    [0, 0, 1, 1, 0],
-    [0, 0, 0, 1, 0],
-    [0, 1, 0, 1, 0]
+    [0, 1, 1],
+    [0, 0, 0],
+    [1, 1, 0]
+
   ],
   player: {
     x:0,
     y:0
   },
   goal:{
-    x:4,
-    y:4
+    x:2,
+    y:2
   },
   theme:'default'
 }
@@ -44,19 +43,18 @@ Challenge.create(objective: "Help Kodo leave the house", level: {
 # Obj : Ajude Kodo a chegar no mercado.
 Challenge.create(objective: "Help Kodo arrive at supermarket", level: {
   map:[
-    [0, 1, 0, 0, 0],
-    [0, 1, 0, 1, 0],
-    [0, 1, 0, 1, 0],
-    [0, 1, 0, 1, 0],
-    [0, 0, 0, 1, 0]
+    [0, 0, 0],
+    [0, 1, 0],
+    [0, 1, 0],
+
   ],
   player: {
     x:0,
-    y:0
+    y:2
   },
   goal:{
-    x:4,
-    y:4
+    x:2,
+    y:2
   },
   theme:'default'
 }
@@ -66,19 +64,18 @@ Challenge.create(objective: "Help Kodo arrive at supermarket", level: {
 # Obj : Ajude Kodo a pegar o Leite
 Challenge.create(objective: "Help Kodo get the milk", level: {
   map:[
-    [0, 1, 0, 0, 0],
-    [0, 1, 0, 0, 0],
-    [0, 0, 0, 1, 0],
-    [0, 0, 0, 1, 0],
-    [0, 0, 0, 1, 0]
+    [0, 1, 1, 1],
+    [0, 0, 0, 0],
+    [1, 0, 1, 0]
+
   ],
   player: {
     x:0,
     y:0
   },
   goal:{
-    x:4,
-    y:4
+    x:3,
+    y:2
   },
   theme:'default'
 }
@@ -88,19 +85,19 @@ Challenge.create(objective: "Help Kodo get the milk", level: {
 # Obj : Ajude Kodo a pegar os ovos
 Challenge.create(objective: "Help Kodo get the egg", level: {
   map:[
-    [0, 1, 0, 1, 0],
-    [0, 0, 0, 1, 0],
-    [0, 1, 0, 1, 0],
-    [0, 1, 0, 0, 0],
-    [0, 1, 0, 0, 0]
+    [0, 1, 0],
+    [0, 0, 0],
+    [0, 1, 0],
+    [0, 1, 0]
+
   ],
   player: {
     x:0,
-    y:4
+    y:3
   },
   goal:{
-    x:4,
-    y:0
+    x:2,
+    y:3
   },
   theme:'default'
 }
@@ -110,19 +107,19 @@ Challenge.create(objective: "Help Kodo get the egg", level: {
 # Obj : Ajude Kodo a pegar a farinha
 Challenge.create(objective: "Help Kodo get the flour", level: {
   map:[
-    [0, 0, 0, 0, 0],
-    [1, 1, 1, 1, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 1, 1, 1],
-    [0, 0, 0, 0, 0]
+    [0, 0, 0, 1],
+    [0, 1, 1, 1],
+    [0, 0, 1, 1],
+    [1, 0, 0, 0]
+
   ],
   player: {
     x:0,
     y:0
   },
   goal:{
-    x:4,
-    y:4
+    x:3,
+    y:3
   },
   theme:'default'
 }
@@ -132,65 +129,27 @@ Challenge.create(objective: "Help Kodo get the flour", level: {
 # Obj : Ajude Kodo a pegar o chocolate
 Challenge.create(objective: "Help Kodo get the chocolate", level: {
   map:[
-    [0, 1, 0, 0, 0],
-    [0, 1, 0, 1, 0],
-    [0, 0, 0, 1, 0],
-    [0, 1, 0, 1, 0],
-    [0, 1, 0, 1, 0]
-  ],
-  player: {
-    x:0,
-    y:4
-  },
-  goal:{
-    x:4,
-    y:4
-  },
-  theme:'default'
-}
-)
-# -----------------------------------------
-#Level 7
-# Obj : Ajude Kodo a pegar o fermento
-Challenge.create(objective: "Help Kodo get the yeast", level: {
-  map:[
-    [0, 0, 0, 1, 0],
-    [1, 1, 0, 1, 0],
-    [0, 0, 0, 1, 0],
-    [0, 1, 1, 1, 0],
-    [0, 0, 0, 0, 0]
+    [0, 1, 1, 0, 0, 0, 0, 1, 1, 1],
+    [0, 0, 1, 0, 0, 0, 1, 0, 0, 0],
+    [1, 0, 1, 1, 1, 0, 1, 0, 0, 1],
+    [1, 0, 0, 0, 1, 0, 1, 0, 0, 0],
+    [1, 1, 1, 0, 0, 0, 1, 0, 0, 0],
+    [0, 1, 0, 1, 0, 0, 1, 0, 0, 0],
+    [0, 1, 0, 0, 1, 0, 0, 0, 0, 1],
+    [0, 1, 0, 1, 0, 1, 1, 1, 0, 1],
+    [0, 1, 0, 1, 0, 0, 1, 1, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 1, 1, 0]
   ],
   player: {
     x:0,
     y:0
   },
   goal:{
-    x:4,
-    y:0
+    x:9,
+    y:9
   },
   theme:'default'
 }
 )
-# -----------------------------------------
-#Level 8
-# Obj : Ajude Kodo a voltar para casa
-Challenge.create(objective: "Help Kodo go back home", level: {
-  map:[
-    [0, 0, 0, 0, 0],
-    [1, 0, 1, 1, 1],
-    [0, 0, 0, 0, 0],
-    [1, 1, 1, 0, 1],
-    [0, 0, 0, 0, 0]
-  ],
-  player: {
-    x:4,
-    y:0
-  },
-  goal:{
-    x:4,
-    y:4
-  },
-  theme:'default'
-}
-)
+
 puts "seed done"
