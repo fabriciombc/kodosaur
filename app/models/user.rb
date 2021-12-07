@@ -8,10 +8,14 @@ class User < ApplicationRecord
   has_one_attached :photo
 
   def completed_challenges
-    challenges.joins(:games).where(games: {completed: true}).ids
+    challenges.joins(:games).where(games: {completed: true}).ids.uniq
   end
 
   def last_completed_challenge
     completed_challenges.max || 0
+  end
+
+  def challenges_left
+    Challenge.count - completed_challenges.count
   end
 end
