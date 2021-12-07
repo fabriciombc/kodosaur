@@ -1,3 +1,6 @@
+<%# <svg style="display:none;">...</svg>
+<header class="page-header">...</header>
+<section class="page-content">...</section> %>
 
 <svg style="display: none;">
   <symbol id="down" viewBox="0 0 16 16">
@@ -57,33 +60,51 @@
   <nav>
     <div class="admin-profile display-flex">
       <div class="users">
-          <%= image_tag("avatar-kid1.png") %>
+          <%= cl_image_tag current_user.photo.key, crop: :fill %>
       </div>
       <span class="greeting">&lt <%= current_user.nickname %> &gt</span>
     </div>
     <ul class="admin-menu">
       <li>
-        <%= link_to dashboard_path do %>
+        <a href="#0">
           <svg>
-            <use xlink:href="#home"></use>
+            <use xlink:href="#users"></use>
           </svg>
-          <span>Back</span>
-        <% end %>
+          <span>Friends</span>
+        </a>
       </li>
-
+      <li>
+        <%= link_to achievement_path  do%>
+          <svg>
+            <use xlink:href="#collection"></use>
+          </svg>
+          <span>Achievements</span>
+         <% end %>
+      </li>
+      <li>
+        <a href="#0">
+          <svg>
+            <use xlink:href="#comments"></use>
+          </svg>
+          <span>Chat</span>
+        </a>
+      </li>
       <li>
       <%= link_to destroy_user_session_path, method: :delete do%>
       <i class="fas fa-sign-out-alt"></i>
       <span> &nbsp; Log Out</span>
       <% end %>
       </li>
+      <li>
+        <%= image_tag("kodo.png") %>
+      </li>
     </ul>
-    <%= image_tag("kodo.png") %>
+
   </nav>
 </header>
 <section class="page-content">
-  <section class="">
+  <section class="grid">
     <article></article>
-      <article><%= image_tag("trofeu.png") %></article>
+    <article><%= image_tag("trofeu.png") %></article>
   </section>
 </section>
