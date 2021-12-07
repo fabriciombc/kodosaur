@@ -1,15 +1,12 @@
 <div class="container">
   <div class="game-play row">
-    <div class="col-3">
+    <div class="col-6" id="work-space">
       <div id="code-box">
-        <button class="btn btn-primary" id="block-up">up</button>
-        <button class="btn btn-primary" id="block-down">down</button>
-        <button class="btn btn-primary" id="block-left">left</button>
-        <button class="btn btn-primary" id="block-right">right</button>
+        <button class="btn btn-primary" data-command="u" id="block-up">up</button>
+        <button class="btn btn-primary" data-command="d" id="block-down">down</button>
+        <button class="btn btn-primary" data-command="l" id="block-left">left</button>
+        <button class="btn btn-primary" data-command="r" id="block-right">right</button>
       </div>
-    </div>
-
-    <div class="col-3">
       <ul id="canvas">
       </ul>
       <button class="btn btn-danger mt-4" id="code-execute">Execute</button>

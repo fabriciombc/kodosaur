@@ -24,9 +24,11 @@ import "bootstrap";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import {gameInit} from '../game/script';
+import { initSortable } from '../plugins/init_sortable';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   gameInit();
+  initSortable();
 });

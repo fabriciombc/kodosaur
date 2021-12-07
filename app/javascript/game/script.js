@@ -163,35 +163,16 @@ Game.prototype.checkGoal = function() {
 Game.prototype.buttomListener = function() {
 
   const canvas = document.getElementById('canvas');
-
-  const buttonUp = document.getElementById('block-up')
-  const buttonDown = document.getElementById('block-down')
-  const buttonRight = document.getElementById('block-right')
-  const buttonLeft = document.getElementById('block-left')
   const buttonExecute = document.getElementById('code-execute')
   const buttonReset = document.getElementById('code-reset')
 
-  buttonUp.addEventListener('click', event => {
-    canvas.insertAdjacentHTML('beforeend', '<li class="command btn btn-primary" data-command="u">up</li>')
-  })
-  buttonDown.addEventListener('click', event => {
-    canvas.insertAdjacentHTML('beforeend', '<li class="command btn btn-primary" data-command="d">down</li>')
-  })
-  buttonRight.addEventListener('click', event => {
-    canvas.insertAdjacentHTML('beforeend', '<li class="command btn btn-primary" data-command="r">right</li>')
-  })
-  buttonLeft.addEventListener('click', event => {
-    canvas.insertAdjacentHTML('beforeend', '<li class="command btn btn-primary" data-command="l">left</li>')
-  })
-  buttonExecute.addEventListener('click', event => {
-    // this.player.x = 0;
-    // this.player.y = 0;
-    const commands = document.querySelectorAll('.command')
+  buttonExecute.addEventListener('click', () => {
+    const commands = canvas.querySelectorAll('button')
     const moviments = []
     commands.forEach( (command) => { moviments.push(command.dataset.command) })
     this.executeMoviment(moviments);
   })
-  buttonReset.addEventListener('click', event => {
+  buttonReset.addEventListener('click', () => {
     window.location.reload();
     return false;
   })
