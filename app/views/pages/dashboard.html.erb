@@ -60,7 +60,7 @@
   <nav>
     <div class="admin-profile display-flex">
       <div class="users">
-          <%= image_tag("avatar-kid1.png") %>
+          <%= cl_image_tag current_user.photo.key, height: 100, width: 100, crop: :fill %>
       </div>
       <span class="greeting">&lt <%= current_user.nickname %> &gt</span>
     </div>
