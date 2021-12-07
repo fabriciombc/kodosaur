@@ -4,4 +4,13 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :games, dependent: :destroy
+  has_many :challenges, through: :games
+
+  def completed_challenges
+    challenges.joins(:games).where(games: {completed: true}).ids
+  end
+
+  def last_completed_challenge
+    completed_challenges.max
+  end
 end
