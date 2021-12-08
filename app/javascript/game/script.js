@@ -77,7 +77,7 @@ Game.prototype.placeSprite = function(type) {
   sprite.id = type;
 
   // set the border radius of the sprite.
-  sprite.style.borderRadius = this.tileDim + 'px';
+  //sprite.style.borderRadius = this.tileDim + 'px';
 
   // get half the difference between tile and sprite.
 
