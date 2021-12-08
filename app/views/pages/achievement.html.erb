@@ -70,12 +70,12 @@
     </div>
     <ul class="admin-menu">
       <li>
-        <a href="#0">
+        <%= link_to friends_path  do%>
           <svg>
             <use xlink:href="#users"></use>
           </svg>
           <span>Friends</span>
-        </a>
+        <% end %>
       </li>
       <li>
         <%= link_to achievement_path  do%>
@@ -95,16 +95,16 @@
       </li>
 
       <li>
-      <%= link_to destroy_user_session_path, method: :delete do%>
-      <i class="fas fa-sign-out-alt"></i>
-      <span> &nbsp; Log Out</span>
-      <% end %>
-      </li>
-      <li>
         <%= link_to dashboard_path do %>
           <i class="fa fa-arrow-left" aria-hidden="true"></i>
           <span>&nbsp;Back</span>
         <% end %>
+      </li>
+      <li>
+      <%= link_to destroy_user_session_path, method: :delete do%>
+      <i class="fas fa-sign-out-alt"></i>
+      <span> &nbsp; Log Out</span>
+      <% end %>
       </li>
       <li>
         <%= image_tag("kodo.png") %>

@@ -95,16 +95,16 @@
       </li>
 
       <li>
-      <%= link_to destroy_user_session_path, method: :delete do%>
-      <i class="fas fa-sign-out-alt"></i>
-      <span> &nbsp; Log Out</span>
-      <% end %>
-      </li>
-      <li>
         <%= link_to dashboard_path do %>
           <i class="fa fa-arrow-left" aria-hidden="true"></i>
           <span>&nbsp;Back</span>
         <% end %>
+      </li>
+      <li>
+      <%= link_to destroy_user_session_path, method: :delete do%>
+      <i class="fas fa-sign-out-alt"></i>
+      <span> &nbsp; Log Out</span>
+      <% end %>
       </li>
       <li>
         <%= image_tag("kodo.png") %>
