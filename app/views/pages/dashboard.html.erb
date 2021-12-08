@@ -60,7 +60,11 @@
   <nav>
     <div class="admin-profile display-flex">
       <div class="users">
+        <% if current_user.photo.attached? %>
           <%= cl_image_tag current_user.photo.key, crop: :fill %>
+        <% else %>
+          <%= image_tag "ifdino.png", class: "avatar dropdown-toggle", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <% end %>
       </div>
       <span class="greeting">&lt <%= current_user.nickname %> &gt</span>
     </div>
