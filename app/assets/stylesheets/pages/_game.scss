@@ -1,6 +1,8 @@
 .show-container {
-  background-image: asset-url("bg2.png");
-  height: 100vh;
+  background-image: asset-url("bg-game.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 130vh;
   width: 100vw;
 }
 
@@ -11,6 +13,7 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  top: 20px;
 }
 
 #game-container-1 {
@@ -18,10 +21,6 @@
   div.layer,
   div.layer div {
     position: absolute;
-  }
-
-  .game-container {
-    // margin: 0px auto;
   }
 
   .game-map {
@@ -101,11 +100,26 @@
 	}
 }
 
+#block-commands {
+  width: 100%;
+  height: 130px;
+}
+
 #canvas {
   width: 100%;
-  height: 200px;
+  height: 120px;
   background-color: lightgray;
-  // margin: 0 auto;
+
+  position: absolute;
+  overflow: auto;
+
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+#execute-commands {
+  background-color: white;
 }
 
 #code-box {
@@ -114,8 +128,4 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-#work-space {
-  // background-color: lightgray;
 }
