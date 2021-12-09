@@ -127,7 +127,7 @@ Challenge.create(objective: "https://res.cloudinary.com/dgn6bjsak/image/upload/v
 # -----------------------------------------
 #Level 6
 # Obj : Ajude Kodo a pegar o chocolate
-Challenge.create(objective: "Help Kodo get the chocolate", level: {
+Challenge.create(objective: "https://res.cloudinary.com/dgn6bjsak/image/upload/v1639056876/Kodosaur%20Stories/supermarket3_ecuerx.png", level: {
   map:[
     [0, 1, 1, 0, 0, 0, 0, 1, 1, 1],
     [0, 0, 1, 0, 0, 0, 1, 0, 0, 0],
