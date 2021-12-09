@@ -34,4 +34,7 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   gameInit();
   initSortable();
+  if (document.getElementById('exampleModalCenter')){
+    $("#exampleModalCenter").modal('show');
+  }
 });
