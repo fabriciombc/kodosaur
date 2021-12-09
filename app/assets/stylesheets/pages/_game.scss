@@ -49,7 +49,7 @@
       background-size: 128px 128px;
     }
     .wall {
-      background-image: asset-url("wall.png");
+      background-image: asset-url("furniture2.png");
         background-repeat: no-repeat;
       background-size: 128px 128px;
     }
@@ -57,12 +57,12 @@
 
   &.level2 {
     .floor {
-      background-image: asset-url("wall.png");
+      background-image: asset-url("kitchen-floor.png");
       background-repeat: no-repeat;
       background-size: 128px 128px;
     }
     .wall {
-      background-image: asset-url("bush-test.png");
+      background-image: asset-url("furniture-kitchen2.png");
         background-repeat: no-repeat;
       background-size: 128px 128px;
     }
@@ -75,7 +75,7 @@
       background-size: 128px 128px;
     }
     .wall {
-      background-image: asset-url("buraco2.png");
+      background-image: asset-url("lake.png");
         background-repeat: no-repeat;
       background-size: 128px 128px;
     }
@@ -83,12 +83,12 @@
 
   &.level4 {
     .floor {
-      background-image: asset-url("stone.png");
+      background-image: asset-url("floor-supermarket.png");
       background-repeat: no-repeat;
       background-size: 128px 128px;
     }
     .wall {
-      background-image: asset-url("bush-test.png");
+      background-image: asset-url("furniture-supermarket1.png");
         background-repeat: no-repeat;
       background-size: 128px 128px;
     }
@@ -101,7 +101,20 @@
       background-size: 128px 128px;
     }
     .wall {
-      background-image: asset-url("buraco3.png");
+      background-image: asset-url("lava.png");
+        background-repeat: no-repeat;
+      background-size: 128px 128px;
+    }
+  }
+
+  &.default {
+    .floor {
+      background-image: asset-url("grass3.png");
+      background-repeat: no-repeat;
+      background-size: 128px 128px;
+    }
+    .wall {
+      background-image: asset-url("lava.png");
         background-repeat: no-repeat;
       background-size: 128px 128px;
     }
