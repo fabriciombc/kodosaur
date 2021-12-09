@@ -20,7 +20,7 @@ puts "Creating challenges..."
 # -----------------------------------------
 # Level 1
 # Obj: Ajude Kodo a sair de casa
-Challenge.create(objective: "Help Kodo leave the house", level: {
+Challenge.create(objective: "https://files.slack.com/files-pri/T02NE0241-F02Q74C2W65/house.png", level: {
   map:[
     [0, 1, 1],
     [0, 0, 0],
