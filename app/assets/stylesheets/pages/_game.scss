@@ -195,3 +195,19 @@
   justify-content: center;
   align-items: center;
 }
+
+button#code-execute {
+    border-radius: 5px;
+}
+
+button#code-reset {
+    border-radius: 5px;
+}
+
+#back-home {
+  color: #677dcd;
+}
+
+#back-home:hover {
+  color: #41518e;
+}

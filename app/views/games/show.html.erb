@@ -32,10 +32,10 @@
     </div>
     <div id="work-space">
       <div id="code-box">
-        <button class="btn btn-primary mx-1" data-command="u" id="block-up">up</button>
-        <button class="btn btn-primary mx-1" data-command="d" id="block-down">down</button>
-        <button class="btn btn-primary mx-1" data-command="l" id="block-left">left</button>
-        <button class="btn btn-primary mx-1" data-command="r" id="block-right">right</button>
+        <button class="btn btn-primary mx-1" data-command="u" id="block-up"><i class="fas fa-arrow-up"></i>&nbsp;up</button>
+        <button class="btn btn-primary mx-1" data-command="d" id="block-down"><i class="fas fa-arrow-down"></i>&nbsp;down</button>
+        <button class="btn btn-primary mx-1" data-command="l" id="block-left"><i class="fas fa-arrow-left"></i>&nbsp;left</button>
+        <button class="btn btn-primary mx-1" data-command="r" id="block-right"><i class="fas fa-arrow-right"></i>&nbsp;right</button>
       </div>
 
       <div id="block-commands">
@@ -43,9 +43,13 @@
       </div>
 
       <div class="d-flex align-items-center justify-content-center mb-3 mt-2" id="execute-commands">
-        <button class="btn btn-danger mx-1" id="code-execute">Execute</button>
-        <button class="btn btn-success mx-1" id="code-reset">Reset</button>
+        <button class="btn btn-success mx-1" id="code-execute"><i class="fas fa-play-circle"></i>&nbsp;Execute</button>
+        <button class="btn btn-warning mx-1" id="code-reset"><i class="fas fa-redo-alt"></i>&nbsp;Reset</button><br>
       </div>
+
+      <%= link_to dashboard_path do %>
+       <span id="back-home"><i class="fas fa-home"></i> Back Home</span>
+      <% end %>
     </div>
   </div>
 </div>
