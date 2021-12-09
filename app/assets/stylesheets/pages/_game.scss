@@ -16,6 +16,20 @@
   top: 20px;
 }
 
+.modal-stories {
+  width: 500px;
+
+  .modal-body{
+    // max-width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  img{
+    width: 100%;
+  }
+}
+
 #game-container-1 {
 
   div.layer,

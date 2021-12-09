@@ -20,7 +20,7 @@ puts "Creating challenges..."
 # -----------------------------------------
 # Level 1
 # Obj: Ajude Kodo a sair de casa
-Challenge.create(objective: "https://files.slack.com/files-pri/T02NE0241-F02Q74C2W65/house.png", level: {
+Challenge.create(objective: "https://res.cloudinary.com/dgn6bjsak/image/upload/v1639055568/Kodosaur%20Stories/house_yiv28h.png", level: {
   map:[
     [0, 1, 1],
     [0, 0, 0],
@@ -35,13 +35,13 @@ Challenge.create(objective: "https://files.slack.com/files-pri/T02NE0241-F02Q74C
     x:2,
     y:2
   },
-  theme:'default'
+  theme:'level1'
 }
 )
 # -----------------------------------------
 # Level 2
 # Obj : Ajude Kodo a chegar no mercado.
-Challenge.create(objective: "Help Kodo arrive at supermarket", level: {
+Challenge.create(objective: "https://res.cloudinary.com/dgn6bjsak/image/upload/v1639056871/Kodosaur%20Stories/kitchen_wybzlv.png", level: {
   map:[
     [0, 0, 0],
     [0, 1, 0],
@@ -56,13 +56,13 @@ Challenge.create(objective: "Help Kodo arrive at supermarket", level: {
     x:2,
     y:2
   },
-  theme:'default'
+  theme:'level2'
 }
 )
 # -----------------------------------------
 # Level 3
 # Obj : Ajude Kodo a pegar o Leite
-Challenge.create(objective: "Help Kodo get the milk", level: {
+Challenge.create(objective: "https://res.cloudinary.com/dgn6bjsak/image/upload/v1639056871/Kodosaur%20Stories/house-forest_qzlgsv.png", level: {
   map:[
     [0, 1, 1, 1],
     [0, 0, 0, 0],
@@ -77,13 +77,13 @@ Challenge.create(objective: "Help Kodo get the milk", level: {
     x:3,
     y:2
   },
-  theme:'default'
+  theme:'level3'
 }
 )
 # -----------------------------------------
 #Level 4
 # Obj : Ajude Kodo a pegar os ovos
-Challenge.create(objective: "Help Kodo get the egg", level: {
+Challenge.create(objective: "https://res.cloudinary.com/dgn6bjsak/image/upload/v1639056871/Kodosaur%20Stories/supermarket_rdlsi4.png", level: {
   map:[
     [0, 1, 0],
     [0, 0, 0],
@@ -99,13 +99,13 @@ Challenge.create(objective: "Help Kodo get the egg", level: {
     x:2,
     y:3
   },
-  theme:'default'
+  theme:'level4'
 }
 )
 # -----------------------------------------
 #Level 5
 # Obj : Ajude Kodo a pegar a farinha
-Challenge.create(objective: "Help Kodo get the flour", level: {
+Challenge.create(objective: "https://res.cloudinary.com/dgn6bjsak/image/upload/v1639056876/Kodosaur%20Stories/supermarket3_ecuerx.png", level: {
   map:[
     [0, 0, 0, 1],
     [0, 1, 1, 1],
@@ -121,7 +121,7 @@ Challenge.create(objective: "Help Kodo get the flour", level: {
     x:3,
     y:3
   },
-  theme:'default'
+  theme:'level5'
 }
 )
 # -----------------------------------------
