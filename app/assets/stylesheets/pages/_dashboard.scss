@@ -172,6 +172,11 @@ body {
 
 .grid article a {
   text-decoration: none;
+  color: #8b382c;
+}
+
+.grid article a:hover {
+  color: #fadd80;
 }
 
 .admin-profile {
@@ -227,7 +232,7 @@ body {
 
   font-size: 1.3em;
   font-weight: 800;
-  color: #8b382c;
+  color: #ab4d2c;
 }
 
 .page-content .grid > article:hover {

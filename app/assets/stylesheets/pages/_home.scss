@@ -32,14 +32,14 @@ body {
   bottom: 25vh;
   z-index: 999;
   &:hover{
-    width: 290px;
+    width: 240px;
   }
 }
 @media only screen and (max-width: 900px) {
   .btn-play {
     width: 200px;
     &:hover{
-      width: 230px;
+      width: 190px;
     }
   }
 }
