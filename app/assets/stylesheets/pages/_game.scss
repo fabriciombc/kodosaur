@@ -16,6 +16,20 @@
   top: 20px;
 }
 
+.modal-stories {
+  width: 500px;
+
+  .modal-body{
+    // max-width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  img{
+    width: 100%;
+  }
+}
+
 #game-container-1 {
 
   div.layer,
@@ -28,14 +42,66 @@
     // margin: 0px auto;
   }
 
-  &.default {
+  &.level1 {
     .floor {
-      background-image: asset-url("bush3.png");
+      background-image: asset-url("floor2.png");
+      background-repeat: no-repeat;
+      background-size: 128px 128px;
+    }
+    .wall {
+      background-image: asset-url("wall.png");
+        background-repeat: no-repeat;
+      background-size: 128px 128px;
+    }
+  }
+
+  &.level2 {
+    .floor {
+      background-image: asset-url("wall.png");
       background-repeat: no-repeat;
       background-size: 128px 128px;
     }
     .wall {
       background-image: asset-url("bush-test.png");
+        background-repeat: no-repeat;
+      background-size: 128px 128px;
+    }
+  }
+
+  &.level3 {
+    .floor {
+      background-image: asset-url("grass2.png");
+      background-repeat: no-repeat;
+      background-size: 128px 128px;
+    }
+    .wall {
+      background-image: asset-url("buraco2.png");
+        background-repeat: no-repeat;
+      background-size: 128px 128px;
+    }
+  }
+
+  &.level4 {
+    .floor {
+      background-image: asset-url("stone.png");
+      background-repeat: no-repeat;
+      background-size: 128px 128px;
+    }
+    .wall {
+      background-image: asset-url("bush-test.png");
+        background-repeat: no-repeat;
+      background-size: 128px 128px;
+    }
+  }
+
+  &.level5 {
+    .floor {
+      background-image: asset-url("grass3.png");
+      background-repeat: no-repeat;
+      background-size: 128px 128px;
+    }
+    .wall {
+      background-image: asset-url("buraco3.png");
         background-repeat: no-repeat;
       background-size: 128px 128px;
     }
