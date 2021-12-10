@@ -126,8 +126,8 @@ Game.prototype.checkGoal = function() {
       title: 'Good Job!',
       text: 'Go to next level or play again',
       showDenyButton: true,
-      confirmButtonText: 'Next Level',
-      denyButtonText: 'Play again'})
+      denyButtonText: 'Play again',
+      confirmButtonText: 'Next Level'})
       .then((result) => {
         if (result.isConfirmed) {
 

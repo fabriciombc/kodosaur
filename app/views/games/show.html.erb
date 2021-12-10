@@ -17,9 +17,6 @@
           <div class="modal-body">
             <%= image_tag(@game.challenge.objective) %>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          </div>
         </div>
       </div>
     </div>
@@ -43,12 +40,12 @@
       </div>
 
       <div class="d-flex align-items-center justify-content-center mb-3 mt-2" id="execute-commands">
-        <button class="btn btn-success mx-1" id="code-execute"><i class="fas fa-play-circle"></i>&nbsp;Execute</button>
         <button class="btn btn-warning mx-1" id="code-reset"><i class="fas fa-redo-alt"></i>&nbsp;Reset</button><br>
+        <button class="btn btn-success mx-1" id="code-execute"><i class="fas fa-play-circle"></i>&nbsp;Execute</button>
       </div>
 
       <%= link_to dashboard_path do %>
-       <span id="back-home"><i class="fas fa-home"></i> Back Home</span>
+        <span id="back-home"><i class="fas fa-home"></i> Back Home</span>
       <% end %>
     </div>
   </div>
