@@ -218,9 +218,20 @@ button#code-reset {
 }
 
 #back-home {
-  color: #677dcd;
+    color: #677dcd;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background: white;
+    padding: 10px;
+    border-radius: 20px;
 }
 
 #back-home:hover {
   color: #41518e;
+}
+
+.btn-primary {
+    background-color: #7641f5;
+    border-color: #7641f3;
 }
